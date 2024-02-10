@@ -4,16 +4,25 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "solid-js": "^1.8.14"
+    "rxjs": "^7.8.1",
+    "solid-js": "^1.8.14",
+    "three": "^0.161.0"
   },
   "devDependencies": {
+    "@pandacss/dev": "^0.30.2",
+    "@types/three": "^0.161.2",
     "typescript": "^5.2.2",
     "vite": "^5.1.0",
-    "vite-plugin-solid": "^2.9.1"
+    "vite-plugin-solid": "^2.9.1",
+    "vite-tsconfig-paths": "^4.3.1"
+  },
+  "volta": {
+    "node": "20.11.0"
   }
 }
