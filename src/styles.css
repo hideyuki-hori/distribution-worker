@@ -1,6 +1,13 @@
-@layer
-  reset,
+@layer reset,
   base,
   tokens,
   recipes,
   utilities;
+
+html {
+  background: linear-gradient(
+    to bottom,
+    #434343, #1C1C1C
+  );
+  height: 100vh;
+}
