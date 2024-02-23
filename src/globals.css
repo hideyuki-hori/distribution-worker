@@ -1,0 +1,20 @@
+@layer reset,
+  base,
+  tokens,
+  recipes,
+  utilities;
+
+html {
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, var(--colors-zinc-800), var(--colors-zinc-900));
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

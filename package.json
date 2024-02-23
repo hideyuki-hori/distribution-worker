@@ -1,5 +1,5 @@
 {
-  "name": "exp-distribution-web-worker",
+  "name": "distribution-worker",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "apexcharts": "^3.46.0",
     "rxjs": "^7.8.1",
+    "solid-apexcharts": "^0.3.4",
     "solid-js": "^1.8.14",
     "three": "^0.161.0"
   },
