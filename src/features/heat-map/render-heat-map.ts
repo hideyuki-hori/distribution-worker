@@ -8,12 +8,12 @@ import { Renderer } from './renderer'
 import { VIDEO_CAPTURE_SIZE as size } from '~/app'
 import { Payload, Result } from './types'
 import { calculate } from './calculate'
+import Worker from './worker?worker'
 
 export async function renderHeatMap() {
   const canvas = await firstValueFrom(canvasMounted$)
   const renderer = new Renderer(canvas, window.innerWidth, window.innerHeight)
-  const url = new URL('./worker.ts', import.meta.url)
-  const worker = new Worker(url, { type: 'module' })
+  const worker = new Worker()
 
   resized$.subscribe(({ width, height }) => renderer.resize(width, height))
 
