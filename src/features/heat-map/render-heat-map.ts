@@ -6,7 +6,6 @@ import { captured$ } from '~/$/camera'
 import { calculationProcessLocationUpdated$ } from '~/$/interaction'
 import { Renderer } from './renderer'
 import { VIDEO_CAPTURE_SIZE as size } from '~/app'
-import { WorkerPayload } from '~/types/worker-payload'
 import { WorkerResult } from '~/types/worker-result'
 import { calculate } from './calculate'
 import Worker from './worker?worker'
@@ -21,14 +20,12 @@ export async function renderHeatMap() {
   calculationProcessLocationUpdated$.pipe(
     switchMap(location => location === 'WebWorker'
       ? captured$.pipe(
-        tap(capture => {
-          const payload: WorkerPayload = {
-            capture,
-            size,
-            height: window.innerHeight,
-          }
-          worker.postMessage(payload)
-        }),
+        map(capture => ({
+          capture,
+          size,
+          height: window.innerHeight,
+        })),
+        tap(payload => worker.postMessage(payload)),
       )
       : captured$.pipe(
         map(capture => calculate(capture, size, window.innerHeight)),

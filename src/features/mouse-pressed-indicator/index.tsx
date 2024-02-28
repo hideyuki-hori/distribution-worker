@@ -1,4 +1,4 @@
-import { createSignal, onCleanup } from 'solid-js'
+import { createSignal, onCleanup, onMount } from 'solid-js'
 import { css } from 'panda/css'
 import { SolidApexCharts } from 'solid-apexcharts'
 import { options } from './options'
@@ -6,10 +6,10 @@ import { $ } from './$'
 
 export function MousePressedIndicator() {
   const [percentage, setPercentage] = createSignal(0)
-  const subscription = $.subscribe(setPercentage)
 
-  onCleanup(() => {
-    subscription.unsubscribe()
+  onMount(() => {
+    const subscription = $.subscribe(setPercentage)
+    onCleanup(() => subscription.unsubscribe())
   })
 
   return (

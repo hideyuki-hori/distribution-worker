@@ -1,5 +1,5 @@
 import { css } from 'panda/css'
-import { For, Match, Switch, onCleanup } from 'solid-js'
+import { For, Match, Switch, onCleanup, onMount } from 'solid-js'
 import { createStore, produce } from 'solid-js/store'
 import { MouseMovement } from '~/types/mouse-movement'
 import { $ } from './$'
@@ -9,15 +9,15 @@ import { DidNotHappen } from './did-not-happen'
 export function MouseMovedSampler() {
   const [movements, setMovements] = createStore<MouseMovement[]>([])
 
-  const subscription = $.subscribe(movement => {
-    setMovements(produce(draft => {
-      draft.unshift(movement)
-      draft.length > 50 && draft.pop()
-    }))
-  })
+  onMount(() => {
+    const subscription = $.subscribe(movement => {
+      setMovements(produce(draft => {
+        draft.unshift(movement)
+        draft.length > 50 && draft.pop()
+      }))
+    })
 
-  onCleanup(() => {
-    subscription.unsubscribe()
+    onCleanup(() => subscription.unsubscribe())
   })
 
   return (

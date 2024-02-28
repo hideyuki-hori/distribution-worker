@@ -1,5 +1,5 @@
+import { WorkerPayload } from '~/types/worker-payload'
 import { calculate } from './calculate'
-import { WorkerPayload } from '../../types/worker-payload'
 
 self.addEventListener('message', (event: MessageEvent<WorkerPayload>) => {
   const { capture, size, height } = event.data
