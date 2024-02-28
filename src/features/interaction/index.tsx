@@ -1,3 +1,4 @@
+import { css } from 'panda/css'
 import { Match, Switch, onCleanup, onMount, createSignal } from 'solid-js'
 import { CameraStatus } from '~/types/camera-status'
 import { NoSignal } from './no-signal'
@@ -14,10 +15,15 @@ export function Interaction() {
   })
 
   return (
-    <Switch>
-      <Match when={status() === 'no signal'}><NoSignal /></Match>
-      <Match when={status() === 'requesting'}><Requesting /></Match>
-      <Match when={status() === 'activated'}><Activated /></Match>
-    </Switch>
+    <div class={css({
+      width: '50%',
+      height: '30%',
+    })}>
+      <Switch>
+        <Match when={status() === 'no signal'}><NoSignal /></Match>
+        <Match when={status() === 'requesting'}><Requesting /></Match>
+        <Match when={status() === 'activated'}><Activated /></Match>
+      </Switch>
+    </div>
   )
 }
