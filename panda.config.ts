@@ -1,11 +1,9 @@
-import { defineConfig } from '@pandacss/dev'
+import { defineConfig,  } from '@pandacss/dev'
 
 export default defineConfig({
   preflight: true,
   include: ['./src/**/*.{ts,tsx}'],
   exclude: [],
-  theme: {
-    extend: {},
-  },
+  jsxFramework: 'solid',
   outdir: 'styled-system',
 })

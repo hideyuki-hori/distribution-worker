@@ -1,8 +1,4 @@
-export type NotificationKind
-  = 'info'
-  | 'succeed'
-  | 'failed'
-  | 'warning'
+import { NotificationKind } from './notification-kind'
 
 export type Notification = {
   kind: NotificationKind

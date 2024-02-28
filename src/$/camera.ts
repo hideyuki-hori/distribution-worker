@@ -1,5 +1,6 @@
-import { BehaviorSubject, Subject } from 'rxjs'
+import { BehaviorSubject, Observable, Subject, map, merge, takeUntil } from 'rxjs'
 import { CameraPermissionStatus } from '~/types/camera-permission-status'
+import { CameraStatus } from '~/types/camera-status'
 
 const accessRequestedSubject = new Subject<void>()
 export const emitAccessRequested = () => accessRequestedSubject.next()
@@ -24,3 +25,15 @@ export const unavailable$ = unavailableSubject.asObservable()
 const capturedSubject = new Subject<Uint8ClampedArray>()
 export const emitCapture = (capture: Uint8ClampedArray) => capturedSubject.next(capture)
 export const captured$ = capturedSubject.asObservable()
+
+export const statusUpdated$: Observable<CameraStatus> = merge(
+  mapAs(accessRequested$, 'requesting'),
+  mapAs(accessFailed$, 'no signal'),
+  mapAs(captured$, 'activated'),
+  mapAs(unavailable$, 'unavailable'),
+)
+  .pipe(takeUntil(unavailable$))
+
+function mapAs(o: Observable<any>, status: CameraStatus) {
+  return o.pipe(map(() => status))
+}
