@@ -1,28 +1,46 @@
-## Usage
+# Web Application Performance Optimization
 
-```bash
-$ npm install # or pnpm install or yarn install
+![](/screen-shot.png)
+
+This repository demonstrates the optimization of web application performance focusing on minimizing rendering delays while efficiently handling various inputs and calculations. It leverages Web Workers for computation tasks and employs reactive programming with RxJS to simplify event management, ensuring high FPS during intensive processing.
+
+# Features
+
+- Web Workers: Offload heavy computations from the UI thread to maintain responsiveness.
+- Reactive Programming: Utilize RxJS for streamlined event handling and data flow management.
+- Visualization: Integrate camera inputs and mouse interactions visualized through Three.js and rendered on HTML canvas.
+- Performance Insights: Explore the benefits of using Web Workers and reactive programming patterns for real-time data processing and UI updates.
+
+# Getting Started
+
+Before running or building the project, make sure to install the necessary dependencies:
+
+```sh
+npm install
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+To start the development server:
 
-## Available Scripts
+```sh
+npm run dev
+```
 
-In the project directory, you can run:
+To build the project for production:
 
-### `npm run dev`
+```sh
+npm run build
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+# Technologies
 
-### `npm run build`
+- SolidJS: Chosen for its minimalistic approach and efficient rendering, ideal for intensive canvas operations.
+- Three.js: Used for 3D visualizations, providing a rich set of features for graphical content.
+- RxJS: Empowers the application with reactive programming capabilities, facilitating complex event handling and data streams.
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+# License
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE.md) file for details.
 
-## Deployment
+# Contribution
 
-Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)
+Feel free to fork this repository and submit pull requests to contribute to the project. For major changes, please open an issue first to discuss what you would like to change.
