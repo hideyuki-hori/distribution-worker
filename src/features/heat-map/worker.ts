@@ -1,7 +1,7 @@
 import { calculate } from './calculate'
-import { Payload } from './types'
+import { WorkerPayload } from '../../types/worker-payload'
 
-self.addEventListener('message', (event: MessageEvent<Payload>) => {
+self.addEventListener('message', (event: MessageEvent<WorkerPayload>) => {
   const { capture, size, height } = event.data
   const [vertices, colors] = calculate(capture, size, height)
   self.postMessage({
