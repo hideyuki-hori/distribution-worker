@@ -36,7 +36,7 @@ export const $: Observable<Notification> = merge(
   ),
   background.canvasMounted$.pipe(map(() => succeed('Background canvas Created'))),
   mouse.pressed$.pipe(map(() => info('Mouse Pressed'))),
-  mouse.released$.pipe(map(() => info('Mouse Peleased'))),
+  mouse.released$.pipe(map(() => info('Mouse Released'))),
   window.resized$.pipe(
     throttleTime(1000),
     map(({ width, height }) => info('Window Resized', `width: ${width.toLocaleString()}, height: ${height.toLocaleString()}`)),
