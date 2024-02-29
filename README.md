@@ -1,6 +1,6 @@
 # Web Application Performance Optimization
 
-![](/screenshot.png)
+![](/public/screenshot.png)
 
 [DEMO](https://every.fail/distribution-worker)
 
