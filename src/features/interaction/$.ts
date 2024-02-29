@@ -1,5 +1,5 @@
 import { Observable, merge } from 'rxjs'
-import { filter, map, reduce, startWith, switchMap, take, takeUntil, windowTime } from 'rxjs/operators'
+import { bufferTime, filter, map, startWith, take, takeUntil } from 'rxjs/operators'
 import { accessRequested$, accessFailed$, captured$, unavailable$, permissionUpdated$ } from '~/$/camera'
 import { everyUpdated$ } from '~/$/scheduler'
 import { CameraStatus } from '~/types/camera-status'
@@ -23,11 +23,12 @@ export const denied$ = permissionUpdated$.pipe(
 )
 
 export const actual$ = everyUpdated$.pipe(
-  windowTime(1000),
-  switchMap(window =>
-    window.pipe(
-      map(() => 1),
-      reduce((acc, _) => acc + 1, 0)
-    )
-  )
+  bufferTime(1000),
+  map(deltas => {
+    const frame = deltas.length
+    const total = deltas.reduce((total, delta) => total + delta, 0)
+    const average = total / frame
+    return average
+  }),
+  filter(isFinite),
 )
