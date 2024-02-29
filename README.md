@@ -4,6 +4,11 @@
 
 This repository demonstrates the optimization of web application performance focusing on minimizing rendering delays while efficiently handling various inputs and calculations. It leverages Web Workers for computation tasks and employs reactive programming with RxJS to simplify event management, ensuring high FPS during intensive processing.
 
+For more details, please refer to the blog posts I've written:
+
+- [on Zenn (in Japanese)]()
+- [on Dev.to (in English)]()
+
 # Features
 
 - Web Workers: Offload heavy computations from the UI thread to maintain responsiveness.
