@@ -43,7 +43,7 @@ export function Header() {
           height='20px'
         />
         <Social
-          href='https://zenn.dev/hideyuki_hori'
+          href='https://zenn.dev/hideyuki_hori/articles/3823e2cf589fd1'
           Icon={Zenn}
           width='20px'
           height='20px'
