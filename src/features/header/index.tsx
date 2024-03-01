@@ -37,7 +37,7 @@ export function Header() {
           height='22px'
         />
         <Social
-          href='https://dev.to/hideyuki_hori'
+          href='https://dev.to/hideyuki_hori/thoughts-on-improving-web-application-performance-web-workers-and-rxjs-121m'
           Icon={DevTo}
           width='20px'
           height='20px'

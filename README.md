@@ -10,7 +10,7 @@ This repository demonstrates the optimization of web application performance foc
 For more details, please refer to the blog posts I've written:
 
 - [on Zenn (in Japanese)](https://zenn.dev/hideyuki_hori/articles/3823e2cf589fd1)
-- [on Dev.to (in English)]()
+- [on Dev.to (in English)](https://dev.to/hideyuki_hori/thoughts-on-improving-web-application-performance-web-workers-and-rxjs-121m)
 
 # Features
 
