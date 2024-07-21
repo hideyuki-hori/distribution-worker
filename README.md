@@ -2,7 +2,7 @@
 
 ![](/public/screenshot.png)
 
-[DEMO](https://every.fail/distribution-worker)
+[DEMO](https://distribution-worker.every.fail)
 This has been tested and confirmed to work only on the latest version of Chrome for MacBook Pro.
 
 This repository demonstrates the optimization of web application performance focusing on minimizing rendering delays while efficiently handling various inputs and calculations. It leverages Web Workers for computation tasks and employs reactive programming with RxJS to simplify event management, ensuring high FPS during intensive processing.
